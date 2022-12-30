@@ -1,0 +1,27 @@
+SNORT
+--------
+
+SNORT is an open-source, rule-based Network Intrusion Detection and Prevention System (NIDS/NIPS).
+
+CAPABILITIES OF SNORT:
+=======================
+
+I. Live traffic analysis
+II. Attack and probe detection
+III. Packet logging
+IV. Protocol analysis
+V. Real-time alerting
+VI. Modules & plugins
+VII. Pre-processors
+VIII. Cross-platform support! (Linux & Windows)
+
+SNORT USE MODELS:
+
+I. Sniffer Mode: Read IP packets and prompt them in the console application.
+II. Packet Logger Mode:  Log all IP packets (inbound and outbound) that visit the network.
+III. NIDS (Network Intrusion Detection System)  and NIPS (Network Intrusion Prevention System) Modes - Log/drop the packets that are deemed as malicious according
+to the user-defined rules.
+
+
+
+
