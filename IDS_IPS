@@ -1,0 +1,74 @@
+DETECTION Vs. PREVENTION
+========================
+
+INTRUSION DETECTION SYSTEM
+--------------------------
+
+IDS is a passive monitoring solution for detecting possible malicious activities/patterns, abnormal incidents, and policy violations. It is responsible for generating
+alerts for each suspicious event. 
+
+TWO MAIN TYPES OF IDS:
+A. Network Intrusion Detection System (NIDS) NIDS monitors the traffic flow from various areas of the network. The aim is to investigate the traffic on the entire
+subnet. If a signature is identified, an alert is created.
+
+B.Host-based Intrusion Detection System (HIDS):  HIDS monitors the traffic flow from a single endpoint device. The aim is to investigate the traffic on a 
+particular device. If a signature is identified, an alert is created.
+
+NOTE: IDS can identify threats but require user assistance to stop them.
+
+INTRUSION PREVENTION SYSTEM
+----------------------------
+
+IPS is an active protecting solution for preventing possible malicious activities/patterns, abnormal incidents, and policy violations. It is responsible for 
+stopping/preventing/terminating the suspicious event as soon as the detection is performed.
+
+FOUR MAIN TYPES OF IPS SYSTEMS:
+-------------------------------
+
+A. Network Intrusion Prevention System (NIPS) :  NIPS monitors the traffic flow from various areas of the network. The aim is to protect the traffic on the entire 
+subnet. If a signature is identified, the ** connection is terminated **.
+
+B. Behaviour-based Intrusion Prevention System (Network Behaviour Analysis - NBA) :Behaviour-based systems monitor the traffic flow from various areas of the network.
+The aim is to protect the traffic on the entire subnet. If a signature is identified, the connection is terminated.
+
+DIFFERENCE BETWEEN NIPS and BEHAVIOUR-BASED:
+The difference between NIPS and Behaviour-based is; behaviour based systems require a training period (also known as "baselining") to learn the normal traffic 
+and differentiate the malicious traffic and threats. This model provides more efficient results against new threats.
+
+The training period is crucial to avoid any false positives.
+
+C.Wireless Intrusion Prevention System (WIPS) :  WIPS monitors the traffic flow from of wireless network. The aim is to protect the wireless traffic and stop
+possible attacks launched from there. If a signature is identified, the connection is terminated.
+
+D. Host-based Intrusion Prevention System (HIPS) : HIPS actively protects the traffic flow from a single endpoint device. The aim is to investigate the traffic
+on a particular device. If a signature is identified, the connection is terminated.
+
+NOTE: HIPS working mechanism is similiar to HIDS, The difference between them is that while HIDS creates alerts for threats, HIPS stops the threats by terminating
+the connection.
+
+NOTE: IPS can identify and block the threats with less user assistance at the detection time.
+
+DETECTION / PREVENTION TECHNIQUES:
+----------------------------------
+
+A. Signature Based:  This technique relies on rules that identify the specific patterns of the known malicious behaviour. This model helps detect known threats. 
+
+B. Behaviour Based: This technique identifies new threats with new patterns that pass through signatures.  The model compares the known/normal with unknown/abnormal
+behaviours. This model helps detect previously unknown or new threats.
+
+C. Policy Based: This technique compares detected activities with system configuration and security policies. This model helps detect policy violations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
