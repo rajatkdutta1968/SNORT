@@ -32,5 +32,14 @@ alert icmp any any <> any any  (msg: "ICMP Packet Found"; sid: 100001; rev:1;)
 
 This rule is located in "/etc/snort/rules/local.rules".
 
+** Snort will create an "alert" file if the traffic flow triggers an alert. One last note; **
+
+once you start running IPS/IDS mode, the sniffing and logging mode will be semi-passive. However, you can activate the functions using the parameters discussed 
+in previous tasks. (-i, -v, -d, -e, -X, -l, -K ASCII) If you don't remember the purpose of these commands.
+
+
+
+
+
                                             
                                             
