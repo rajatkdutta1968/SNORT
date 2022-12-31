@@ -1,0 +1,31 @@
+SNORT PACKET LOGGER MODE
+---------------------------
+
+Packet logger parameters are explained in the table below;
+
+PARAMETER                                       DESCRIPTION
+****************************              ********************************************
+
+-l                                        Logger mode, target log and alert output directory. Default output folder is /var/log/snort
+                                          The default action is to dump as tcpdump format in /var/log/snort
+                                          
+                                          
+-K ASCII                                  Log Packets in ASCII format
+
+
+-r                                        Reading option, read the dumped log in snort
+
+-n                                        Specify the number of packets that will process/read. Snort will stop after reading the specified number of packets.
+
+
+
+HOW TO START snort instance in PACKET LOGGER MODE?
+**************************************************
+
+sudo snort -dev -l 
+
+Once the traffic is generated, Snort will start showing the packets and log them in the target directory.
+
+                                          
+                                          
+                                          
