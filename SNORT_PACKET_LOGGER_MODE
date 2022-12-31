@@ -24,8 +24,78 @@ HOW TO START snort instance in PACKET LOGGER MODE?
 
 sudo snort -dev -l 
 
-Once the traffic is generated, Snort will start showing the packets and log them in the target directory.
+Once the traffic is generated, Snort will start showing the packets and log them 
 
+
+the target directory.
+
+*****************************
+Logging with parameter "-l"
+*****************************
+sudo snort -dev -l .
+
+NOTE: You can configure the default output directory in snort.config file. However, you can use the "-l" parameter to set a target directory. Identifying the
+default log directory is useful for continuous monitoring operations, and the "-l" parameter is much more useful for testing purposes.
+
+The -l . part of the command creates the logs in the current directory.
+
+
+Logging with parameter "-K ASCII"
+**********************************
+
+sudo snort -dev -K ASCII -l .
+
+The logs created with "-K ASCII" parameter is entirely different. There are two folders with IP address names.
+In a nutshell, ASCII mode provides multiple files in human-readable format, so it is possible to read the logs easily by using a text editor. By contrast with
+ASCII format, binary format is not human-readable and requires analysis using Snort or an application like tcpdump.
+
+
+*************************************************
+Reading generated logs with parameter "-r"
+*************************************************
+
+sudo snort -r logfilename.log
+
+** snort cannot read logs with "-K ASCII" parameter. ** 
+
+**********************************
+OPENING A LOG FILE USING TCPDUMP
+**********************************
+
+sudo tcpdump -r snort.log.1638459842 -ntc 10
+
+****************************************************
+HOW TO FILTER BINARY LOG FILES USING "-r" PARAMETER
+****************************************************
+
+sudo snort -r logname.log -X
+sudo snort -r logname.log icmp
+sudo snort -r logname.log tcp
+sudo snort -r logname.log 'udp and port 53'
+
+** NOTE: The output will be the same as the above, but only packets with the chosen protocol will be shown **
+
+You can specify the number of processes with the parameter "-n". The following command will process only the first 10 packets:
+
+snort -dvr logname.log -n 10
+
+
+
+
+
+
+
+
+SOME EXERCISE SOLVES:-
+************************
                                           
                                           
-                                          
+Read the snort.log file with Snort; what is the IP ID of the 10th packet?                                          
+sudo snort -r snort.log.1640048004 -n 10 -X
+
+
+Read the "snort.log.1640048004" file with Snort; what is the referer of the 4th packet?
+sudo snort -r snort.log.1640048004 -n 10 -X
+
+Read the "snort.log.1640048004" file with Snort; what is the number of the "TCP port 80" packets?
+sudo snort -r snort.log.1640048004 'tcp and port 80'
