@@ -53,6 +53,11 @@ Start the Snort instance and disable logging by running the following command:
 
 sudo snort -c /etc/snort/snort.conf -N
 
+IDS/IPS mode with parameter "-D"
+*********************************
+
+sudo snort -c /etc/snort/snort.conf -D
+
 
 
 
