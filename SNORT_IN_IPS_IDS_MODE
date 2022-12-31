@@ -38,6 +38,24 @@ once you start running IPS/IDS mode, the sniffing and logging mode will be semi-
 in previous tasks. (-i, -v, -d, -e, -X, -l, -K ASCII) If you don't remember the purpose of these commands.
 
 
+IDS/IPS mode with parameter "-c and -T"
+****************************************
+
+Start the Snort instance and test the configuration file. 
+
+sudo snort -c /etc/snort/snort.conf -T
+
+
+IDS/IPS mode with parameter "-N"
+*********************************
+
+Start the Snort instance and disable logging by running the following command:
+
+sudo snort -c /etc/snort/snort.conf -N
+
+
+
+
 
 
 
