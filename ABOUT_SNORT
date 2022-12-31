@@ -36,6 +36,13 @@ Note: that every time you start the Snort, it will automatically show the defaul
 the "-q" parameter.
 
 
+PARAMETERS                                          DESCRIPTION
+***********                                   **************************************
+-V / -version                         Instance Version
+-c                                    Identifying the configuration file
+-T                                    Snort's self-test parameter, you can test your setup with this parameter.
+-q                                    Quiet mode prevents snort from displaying the default banner and initial information about your setup.
+
 
 
 
