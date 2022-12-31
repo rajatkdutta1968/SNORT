@@ -2,3 +2,35 @@ Capabilities of Snort are not limited to sniffing and logging the traffic. IDS/I
 
 (N)IDS/IPS mode depends on the rules and configuration
 
+IDS/IPS Mode
+************
+
+NIDS mode parameters are listed:-
+
+Parameter                                               Description
+
+-c                                            Defining the configuration file
+
+-T                                            Testing the configuration file
+
+-N                                            Disable Logging
+
+-D                                            Background Mode
+
+                                              ALERT MODE
+                                              full: Full alert mode, providing all possible information about the alert. This one also is the default mode; 
+-A                                            fast: Fast mode shows the alert message, timestamp, source and destination IP along with Port numbers.
+                                              console: Provides fast analysis alerts on the console screen
+                                              cmd:  CMG style, basic header details with payload in hex and text format.
+                                              none: Disabling alerting
+                                              
+NOTE: Once you start running IDS/IPS mode, you need use rules.
+
+Example: The defined rule will only generate alerts in any direction of ICMP packet activity.
+
+alert icmp any any <> any any  (msg: "ICMP Packet Found"; sid: 100001; rev:1;)
+
+This rule is located in "/etc/snort/rules/local.rules".
+
+                                            
+                                            
