@@ -1,0 +1,4 @@
+Capabilities of Snort are not limited to sniffing and logging the traffic. IDS/IPS mode helps you manage the traffic according to user-defined rules.
+
+(N)IDS/IPS mode depends on the rules and configuration
+
