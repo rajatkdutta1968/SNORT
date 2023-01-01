@@ -93,7 +93,20 @@ C. Non-Payload Rule Options: Rule options that focus on non-payload data. These 
 
 General Rule Options
 *********************
+MSG                 The message field is a basic prompt and quick identifier of the rule. Once the rule is triggered, the message filed will appear in the console or log.
 
+                    Snort rule IDs (SID) come with a pre-defined scope, and each rule must have a SID in a proper format. 
+Sid                 <100: Reserved rules
+                    100-999,999: Rules came with the build.
+                   >=1,000,000: Rules created by user.
+
+Reference          Each rule can have additional information or reference to explain the purpose of the rule or threat pattern. That could be a Common Vulnerabilities and Exposures (CVE) id or external information.
+
+
+
+Rev                  Each rule has its unique rev number, and there is no auto-backup feature on the rule history
+
+Example: alert icmp any any <> any any (msg: "ICMP Packet Found"; sid: 100001; reference:cve,CVE-XXXX; rev:1;)
 
 
 
