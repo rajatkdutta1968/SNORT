@@ -13,5 +13,24 @@ Reject        ICMP                                                              
                                     RULE HEADER                                               Rule Options
 ============================================================================================  ============
 
+Rules cannot be processed without a header. Rule options are "optional" parts. However, it is almost impossible to detect sophisticated attacks without using the rule options.
+
+
+                    There are several actions for rules.
+                    (o) alert: Generate an alert and log the packet
+                    (o) log: Log the packet
+                    (o) block: Block and log the packet
+ACTION              (o) reject: Block the packet, log it and terminate the packet session.
+
+
+                    The protocol parameter identifies the type of the protocol that filtered for the loop.
+                    Note that Snort2 supports only four protocols filters in the rules (IP, TCP, UDP and ICMP).
+                    However, you can detect the application flows using port numbers and options.
+PROTOCOL            ** if you want to detect FTP traffic, you cannot use the FTP keyword in the protocol field but filter the FTP traffic by investigating 
+                    TCP traffic on port 21. **
+                    
+                    
+
+
 
                                     
