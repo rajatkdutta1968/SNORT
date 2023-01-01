@@ -53,10 +53,36 @@ Start the Snort instance and disable logging by running the following command:
 
 sudo snort -c /etc/snort/snort.conf -N
 
-IDS/IPS mode with parameter "-D"
+IDS/IPS mode with parameter "-D"  (IN BACKGROUND MODE)
 *********************************
 
 sudo snort -c /etc/snort/snort.conf -D
+
+if you activate verbosity (-v) or full packet dump (-X) with packet logger mode (-l) you will still have the logs in the logs folder, but there will be no output
+in the console.
+
+to get process ID:
+ps -ef | grep snort
+
+TO KILL THE PROCESS:
+sudo kill -9 PROCESS_ID
+
+NOTES: Daemon mode in snort is used mainly to automate the Snort. This parameter is mainly used in scripts to start the Snort service in the background. 
+It is not recommended to use this mode unless you have a working knowledge of Snort and stable configuration.
+
+IDS/IPS mode with Parameter "-A"
+*********************************
+(A) sudo snort -c /etc/snort/snort.conf -A console
+Console mode provides first style alerts on the console screen. 
+
+(B) sudo snort -c /etc/snort/snort.conf -A cmg
+
+
+
+
+
+
+
 
 
 
