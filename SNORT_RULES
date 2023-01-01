@@ -44,6 +44,28 @@ Filter an IP range            alert icmp 192.168.1.0/24 any <> any any  (msg: "I
 Filter multiple IP ranges     alert icmp [192.168.1.0/24, 10.1.1.0/24] any <> any any  (msg: "ICMP Packet Found"; sid: 100001; rev:1;)
                               This rule will create alerts for each ICMP packet originating from the 192.168.1.0/24 and 10.1.1.0/24 subnets.
                               
+Exclude IP addresses/ranges   "negation operator" is used for excluding specific addresses and ports. Negation operator is indicated with "!"
+                              alert icmp !192.168.1.0/24 any <> any any  (msg: "ICMP Packet Found"; sid: 100001; rev:1;)
+                              Explanation: This rule will create alerts for each ICMP packet not originating from the 192.168.1.0/24 subnet.
+                              
+Port Filtering                alert tcp !192.168.1.0/24 21 <> any any  (msg: "ICMP Packet Found"; sid: 100001; rev:1;)
+                              This rule will create alerts for each TCP packet originating from port 21.
+                              
+Exclude a specific port       alert tcp !192.168.1.0/24 !21 <> any any  (msg: "ICMP Packet Found"; sid: 100001; rev:1;)
+
+
+Filter a port range (Type 1)  alert tcp !192.168.1.0/24 1:1024 <> any any  (msg: "ICMP Packet Found"; sid: 100001; rev:1;)
+                              This rule will create alerts for each TCP packet originating from ports between 1-1024.
+                              
+Filter a port range (Type 2)  alert icmp any :1024 <> any any  (msg: "ICMP Packet Found"; sid: 100001; rev:1;)
+                              This rule will create alerts for each TCP packet originating from ports less than or equal to 1024.
+                              
+Filter a port range (Type 3)  alert icmp any 1024: <> any any (msg: "ICMP Packet Found"; sid: 100001; rev:1;)
+                              This rule will create alerts for each TCP packet originating from a source port higher than or equal to 1024.
+                              
+Filter a port range (Type 4)  alert icmp any 80,1024: <> any any (msg: "ICMP Packet Found"; sid: 100001; rev:1;)
+                              This rule will create alerts for each TCP packet originating from a source port 80 and higher than or equal to 1024.
+                              
 
 
 
