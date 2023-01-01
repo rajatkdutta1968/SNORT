@@ -77,6 +77,32 @@ Console mode provides first style alerts on the console screen.
 
 (B) sudo snort -c /etc/snort/snort.conf -A cmg
 
+Cmg mode provides basic header details with payload in hex and text format. Start the Snort instance in cmg alert mode (-A cmg ) 
+
+(C) sudo snort -c /etc/snort/snort.conf -A fast
+Fast mode provides alert messages, timestamps, and source and destination IP addresses.
+
+(D) sudo snort -c /etc/snort/snort.conf -A full
+Full alert mode provides all possible information about the alert. Remember, there is no console output in this mode.
+
+(E) sudo snort -c /etc/snort/snort.conf -A none
+Disable alerting. This mode doesn't create the alert file. However, it still logs the traffic and creates a log file in binary dump format. Remember, 
+there is no console output in this mode. 
+
+(F) sudo snort -c /etc/snort/rules/local.rules -A console
+
+IDS/IPS mode: "Using rule file without configuration file"
+It is possible to run the Snort only with rules without a configuration file. Running the Snort in this mode will help you test the user-created rules. 
+
+****************************************************************
+              IPS mode and dropping packets
+****************************************************************
+
+sudo snort -c /etc/snort/snort.conf -q -Q --daq afpacket -i eth0:eth1 -A console
+
+
+
+
 
 
 
