@@ -1,0 +1,28 @@
+HOW TO ANALYZE PCAPS USING SNORT
+********************************
+
+PCAP MODE PARAMETERS
+====================
+
+-r / --pcap-single=                                   Read a single PCAP file
+
+--pcap-list=""                                        Read pcaps provided in command (space separated).
+
+--pcap-show                                           Show pcap name on console during processing.
+
+A. default reading option using PCAP
+
+snort -r icmp-test.pcap
+
+B. investigate the pcap with our configuration file and see what will happen
+
+sudo snort -c /etc/snort/snort.conf -q -r icmp-test.pcap -A console -n 10
+
+C. Investigating multiple PCAPs with parameter "--pcap-list"
+
+sudo snort -c /etc/snort/snort.conf -q --pcap-list="icmp-test.pcap http2.pcap" -A console -n 10
+
+D. Investigating multiple PCAPs with parameter "--pcap-show"
+
+sudo snort -c /etc/snort/snort.conf -q --pcap-list="icmp-test.pcap http2.pcap" -A console --pcap-show
+
