@@ -67,7 +67,22 @@ Filter a port range (Type 4)  alert icmp any 80,1024: <> any any (msg: "ICMP Pac
                               This rule will create alerts for each TCP packet originating from a source port 80 and higher than or equal to 1024.
                               
 
+Direction
+==========
 
+The direction operator indicates the traffic flow to be filtered by Snort. The left side of the rule shows the source, and the right side shows the destination.
+
+-> Source to destination flow
+<> Bidirectional flow
+
+** Note: "<-" there is no "<-" operator in Snort
+
+           Source     Destination
+           -------    --------
+alert icmp any any <> any any (msg: "ICMP Packet Found"; reference CVE-XXXX; sid:1000001; rev:1;)
+------------------------------ ------------------------------------------------------------------
+          Rule Header                               Rule Options
+          
 
 
 
