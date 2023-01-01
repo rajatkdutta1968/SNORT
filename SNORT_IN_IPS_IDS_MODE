@@ -100,6 +100,13 @@ It is possible to run the Snort only with rules without a configuration file. Ru
 
 sudo snort -c /etc/snort/snort.conf -q -Q --daq afpacket -i eth0:eth1 -A console
 
+Snort IPS mode activated with -Q --daq afpacket parameters.
+You can also activate this mode by editing snort.conf file.
+Activate the Data Acquisition (DAQ) modules and use the afpacket module to use snort as an IPS: -i eth0:eth1
+
+
+
+
 
 
 
