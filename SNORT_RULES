@@ -84,6 +84,17 @@ alert icmp any any <> any any (msg: "ICMP Packet Found"; reference CVE-XXXX; sid
           Rule Header                               Rule Options
           
 
+THERE ARE 3 MAIN RULE OPTIONS IN SNORT:
+=======================================
+
+A. General Rule Options:  Fundamental rule options for Snort. 
+B. Payload Rule Options:  Rule options that help to investigate the payload data. These options are helpful to detect specific payload patterns
+C. Non-Payload Rule Options: Rule options that focus on non-payload data. These options will help create specific patterns and identify network issues.
+
+General Rule Options
+*********************
+
+
 
 
 
