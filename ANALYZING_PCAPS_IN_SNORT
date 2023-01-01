@@ -26,3 +26,23 @@ D. Investigating multiple PCAPs with parameter "--pcap-show"
 
 sudo snort -c /etc/snort/snort.conf -q --pcap-list="icmp-test.pcap http2.pcap" -A console --pcap-show
 
+SOLVE OF EXERCISES
+*******************
+
+1. Investigate the mx-2.pcap and mx-3.pcap files with the default configuration file.
+
+sudo snort -c /etc/snort/snort.conf -A full -l . --pcap-list="mx-2.pcap mx-3.pcap"
+
+2.Investigate the mx-2.pcap file with the default configuration file.
+sudo snort -c /etc/snort/snort.conf -A full -l . -r mx-2.pcap
+
+3.
+Investigate the mx-1.pcap file with the second configuration file.
+
+sudo snort -c /etc/snort/snortv2.conf -A full -l . -r mx-1.pcap
+
+4.Investigate the mx-1.pcap file with the default configuration file.
+sudo snort -c /etc/snort/snort.conf -A full -l . -r mx-1.pcap
+
+
+
