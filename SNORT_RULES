@@ -185,6 +185,10 @@ local.rules
 once you create a rule, it is a local rule and should be in your "local.rules" file. This file is located under "/etc/snort/rules/local.rules"
 
 
+Write a rule to filter IP ID "35369" and run it against the given pcap file. What is the request name of the detected packet? 
+alert icmp any any <> any any (msg: "ID TEST"; id:35369; sid: 100001; rev:1;)
+
+
 
 
 
