@@ -1,0 +1,26 @@
+POINTS TO REMEMBER
+*******************
+
+Main Components of Snort
+
+A. Packet Decoder - Packet collector component of Snort. It collects and prepares the packets for pre-processing. 
+B. Pre-processors - A component that arranges and modifies the packets for the detection engine.
+C. Detection Engine - The primary component that process, dissect and analyse the packets by applying the rules. 
+D. Logging and Alerting - Log and alert generation component.
+E. Outputs and Plugins - Output integration modules (i.e. alerts to syslog/mysql) and additional plugin (rule management detection plugins) support is done with this component. 
+
+3 Types of Rules
+================
+
+Community Rules - Free ruleset under the GPLv2. Publicly accessible, no need for registration.
+Registered Rules - Free ruleset (requires registration). This ruleset contains subscriber rules with 30 days delay.
+Subscriber Rules (Paid) - Paid ruleset (requires subscription). This ruleset is the main ruleset and is updated twice a week (Tuesdays and Thursdays).
+
+Main Files:
+snort.conf: Main configuration file.
+local.rules: User-generated rules file.
+
+snort.conf
+==========
+
+
