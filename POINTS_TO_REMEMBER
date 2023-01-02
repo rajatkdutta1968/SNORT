@@ -23,4 +23,55 @@ local.rules: User-generated rules file.
 snort.conf
 ==========
 
+HOW TO CONFIGURE IT?
+sudo gedit /etc/snort/snort.conf
+
+1. Navigate to the "Step #1: Set the network variables." section.
+TAG_NAME                                    INFO                                    EXAMPLE
+--------------------------------------------------------------------------------------------------------------------
+
+HOME_NET                That is where we are protecting.                         'any' OR '192.168.1.1/24'
+
+EXTERNAL_NET            This field is the external network, so we need to keep   'any' OR '!$HOME_NET' 
+                        it as 'any' or '!$HOME_NET'. 
+                        
+RULE_PATH               Hardcoded rule path.                                      /etc/snort/rules
+
+SO_RULE_PATH            These rules come with registered and subscriber rules.   $RULE_PATH/so_rules
+
+PREPROC_RULE_PATH       These rules come with registered and subscriber rules.    $RULE_PATH/plugin_rules
+
+2. Navigate to the "Step #2: Configure the decoder." section.
+
+In this section, you manage the IPS mode of snort. The single-node installation model IPS model works best with "afpacket" mode. You can enable this mode and run Snort in IPS.
+
+TAG NAME              	INFO	                                                      EXAMPLE
+
+#config daq:            IPS mode selection.                                     afpacket
+#config daq_mode:       Activating the inline mode                              inline
+#config logdir:         Hardcoded default log path.                             /var/logs/snort
+
+Data Acquisition Modules (DAQ) are specific libraries used for packet I/O, bringing flexibility to process packets. 
+
+There are six DAQ modules available in Snort;
+
+Pcap: Default mode, known as Sniffer mode.
+Afpacket: Inline mode, known as IPS mode.
+Ipq: Inline mode on Linux by using Netfilter. It replaces the snort_inline patch.  
+Nfq: Inline mode on Linux.
+Ipfw: Inline on OpenBSD and FreeBSD by using divert sockets, with the pf and ipfw firewalls.
+Dump: Testing mode of inline and normalisation.
+
+3. Navigate to the "Step #6: Configure output plugins" section.
+
+This section manages the outputs of the IDS/IPS actions, such as logging and alerting format details. The default action prompts everything in the console application, so configuring this part will help you use the Snort more efficiently. 
+
+4.Navigate to the "Step #7: Customise your ruleset" section.
+
+TAG NAME                          INFO                                                      EXAMPLE
+
+# site specific rules         Hardcoded local and user-generated rules path.    include $RULE_PATH/local.rules
+#include $RULE_PATH/          Hardcoded default/downloaded rules path.          include $RULE_PATH/rulename
+
+
 
