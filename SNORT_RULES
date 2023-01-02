@@ -181,6 +181,9 @@ alert ip any any <> any any (msg: "SAME-IP TEST";  sameip; sid: 100001; rev:1;)
 
 local.rules
 ===========
+TO RUN USING LOCAL RULES:
+snort -c local.rules -A full -l . -r task9.pcap
+
 
 once you create a rule, it is a local rule and should be in your "local.rules" file. This file is located under "/etc/snort/rules/local.rules"
 
@@ -195,7 +198,10 @@ alert tcp any any <> any any (msg: "FLAG TEST"; flags:S;  sid: 100001; rev:1;)
 3.Write a rule to filter packets with Push-Ack flags and run it against the given pcap file. What is the number of detected packets?
 alert tcp any any <> any any (msg: "FLAG TEST"; flags:PA;  sid: 100001; rev:1;)
 
-4.
+4.Create a rule to filter packets with the same source and destination IP and run it against the given pcap file. What is the number of detected packets?
+alert tcp any any <> any any (msg: "FLAG TEST"; flags:PA;  sid: 100001; rev:1;)
+alert udp any any <> any any (msg: "SAME-IP TEST";  sameip; sid: 100001; rev:1;)
+
 
 
 
