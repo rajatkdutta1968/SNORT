@@ -7,11 +7,53 @@ cat alert | grep [**] | wc
 snort -v -r snort.log.1672720678 -n 63
  
 
-TASK:2
+TASK:FTP
 1.
 alert tcp any 21 <> any any  (msg: "FTP Request Found";sid: 100001; rev:1;)
 
 cat alert | grep [**] | wc
 
 2.snort -v -r snort.log.1672720678
+(It is not working)
+ SO use tcpdump
+tcpdump -r snort.log.1672720678
+got the answer
+
+3.TASK 3
+Write a rule to detect successful FTP logins in the given pcap.
+
+What is the number of detected packets?
+
+alert tcp any 21 <> any any  (msg: "FTP Request Found"; sid: 100001; rev:1;)
+
+tcpdump -r snort.log.1672740778 | grep "230 User" | wc
+**NOTE: 230 User is showed after successful login
+
+4. TASK 4
+Write a rule to detect failed FTP login attempts in the given pcap.
+
+What is the number of detected packets?
+alert tcp any 21 <> any any  (msg: "FTP Request Found"; sid: 100001; rev:1;)
+
+tcpdump -r snort.log.1672740778 | grep "530 User" | wc
+**NOTE: 530 User is showed after unsuccessful login
+
+5. TASK 5
+Write a rule to detect failed FTP login attempts with a valid username but a bad password or no password.
+
+What is the number of detected packets?
+
+alert tcp any 21 <> any any  (msg: "FTP Request Found"; sid: 100001; rev:1;)
+tcpdump -r snort.log.1672740778 | grep "331 Password" | wc
+
+Note:Bad Password or no Password will return "331 Password"
+
+6.
+Write a rule to detect failed FTP login attempts with "Administrator" username but a bad password or no password.
+
+What is the number of detected packets?
+
+
+
+
 
