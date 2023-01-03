@@ -53,6 +53,10 @@ Write a rule to detect failed FTP login attempts with "Administrator" username b
 
 What is the number of detected packets?
 
+alert tcp any 21 <> any any  (msg: "FTP Request Found"; content: "Administrator"; sid: 100001; rev:1;)
+tcpdump -r snort.log.1672742148 | grep "331 Password" | wc
+
+
 
 
 
