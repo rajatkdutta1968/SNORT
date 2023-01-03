@@ -1,0 +1,17 @@
+1.alert tcp any 80 <> any any  (msg: "GET Request Found";sid: 100001; rev:1;)
+
+snort -c local.rules -A full -l . -r task9.pcap
+cat alert | grep [**] | wc
+
+2.
+snort -v -r snort.log.1672720678 -n 63
+ 
+
+TASK:2
+1.
+alert tcp any 21 <> any any  (msg: "FTP Request Found";sid: 100001; rev:1;)
+
+cat alert | grep [**] | wc
+
+2.snort -v -r snort.log.1672720678
+
