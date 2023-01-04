@@ -101,6 +101,21 @@ Now Dump the Log File:
 
 sudo snort -d -r snort.log.xxxxxxxxx
 
+2.What is the name of the torrent application?
+(Same Procedure)
+SAME RULE
+3.
+Investigate the log/alarm files.
+
+What is the MIME (Multipurpose Internet Mail Extensions) type of the torrent metafile?
+(SAME RULE AND SAME PROCEDURE)
+
+3.
+Investigate the log/alarm files.
+
+What is the hostname of the torrent metafile?
+
+(SAME RULE AND SAME PROCEDURE)
 
 
 
