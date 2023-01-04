@@ -121,6 +121,11 @@ What is the hostname of the torrent metafile?
 
 
 
+TASK:
+
+alert tcp any any -> any 445 (msg: "Exploit Detected!"; flow:to_server, established; content: "\\IPC$"; sid: 20242291; rev: 1;)
+
+
 
 
 
