@@ -71,7 +71,20 @@ snort -c local.rules -A full -l . -r ftp-png-gif.pcap
 Now dump the log file:-
 sudo snort -d -r snort.log.1672807353
 
-2.
+2.Write a rule to detect the GIF file in the given pcap.
+
+Investigate the logs and identify the image format embedded in the packet.
+
+RULE:
+alert tcp any any <> any any  (msg: "GIF File Found"; content:"GIF89a"; sid: 100001; rev:1;)
+
+Then Run:
+snort -c local.rules -A full -l . -r ftp-png-gif.pcap
+
+Now Dump the Log File:
+sudo snort -d -r snort.log.1672810334
+
+
 
 
 
