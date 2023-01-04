@@ -122,9 +122,11 @@ What is the hostname of the torrent metafile?
 
 
 TASK:
-
+1. Use local-1.rules empty file to write a new rule to detect payloads containing the "\IPC$" keyword.
+RULE:
 alert tcp any any -> any 445 (msg: "Exploit Detected!"; flow:to_server, established; content: "\\IPC$"; sid: 20242291; rev: 1;)
 
+(REST SAME)
 
 
 
