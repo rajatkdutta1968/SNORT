@@ -56,6 +56,25 @@ What is the number of detected packets?
 alert tcp any 21 <> any any  (msg: "FTP Request Found"; content: "Administrator"; sid: 100001; rev:1;)
 tcpdump -r snort.log.1672742148 | grep "331 Password" | wc
 
+TASK: PNG
+=========
+
+1. Write a rule to detect the PNG file in the given pcap.
+Investigate the logs and identify the software name embedded in the packet.
+
+RULE: 
+alert tcp any any <> any any  (msg: "PNG File Found"; content:"|89 50 4E 47 0D 0A 1A 0A|"; sid: 100001; rev:1;)
+
+Then run:
+snort -c local.rules -A full -l . -r ftp-png-gif.pcap
+
+Now dump the log file:-
+sudo snort -d -r snort.log.1672807353
+
+2.
+
+
+
 
 
 
