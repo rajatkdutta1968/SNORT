@@ -85,6 +85,26 @@ Now Dump the Log File:
 sudo snort -d -r snort.log.1672810334
 
 
+TASK: TORRENT
+=============
+
+1.Write a rule to detect the torrent metafile in the given pcap.
+ What is the number of detected packets?
+
+RULE:
+alert tcp any any <> any any (msg: "P2P.torrent metafile"; content: "HTTP/"; content: ".torrent"; sid: 100001; rev:1;)
+
+Then Run:
+snort -c local.rules -A full -l . -r ftp-png-gif.pcap
+
+Now Dump the Log File:
+
+sudo snort -d -r snort.log.xxxxxxxxx
+
+
+
+
+
 
 
 
