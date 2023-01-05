@@ -178,6 +178,22 @@ Filtering the source and destination IP addresses for duplication.
 Ex:
 alert ip any any <> any any (msg: "SAME-IP TEST";  sameip; sid: 100001; rev:1;)
 
+flow:
+=====
+established
+
+Meaning: only applicable to TCP only. It will reject 3-way handshake packets (as they have no payloads)
+
+to_server:
+==========
+there are four rules:
+Option          Description
+1) to_client    Trigger on server responses from A to B
+2) to_server    Trigger on client requests from A to B
+3) from_client  Trigger on client requests from A to B
+4) from_server  Trigger on server responses from A to B
+
+
 
 local.rules
 ===========
