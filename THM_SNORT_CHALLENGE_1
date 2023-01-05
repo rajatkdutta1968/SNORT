@@ -158,7 +158,12 @@ alert tcp any any -> any 445 (msg: "Exploit Detected!"; flow:to_server, establis
 TASK: log4j
 ===========
 
+
+Use local-1.rules empty file to write a new rule to detect packet payloads between 770 and 855 bytes
+The RULE:
 alert tcp any any -> any any (msg:"LOG4j"; flow:established; dsize:770<>855; sid:21003731; rev:1;)
+
+REST SAME AS ABOVE
 
 
 
