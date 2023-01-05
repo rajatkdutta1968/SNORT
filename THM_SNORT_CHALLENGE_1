@@ -155,7 +155,10 @@ alert tcp any any -> any 445 (msg: "Exploit Detected!"; flow:to_server, establis
 (REST SAME)
 
 
+TASK: log4j
+===========
 
+alert tcp any any -> any any (msg:"LOG4j"; flow:established; dsize:770<>855; sid:21003731; rev:1;)
 
 
 
