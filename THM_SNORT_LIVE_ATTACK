@@ -25,3 +25,15 @@ drop tcp any any <> any any (msg: "DROPPED"; sid:100001; rev:1;)
 (B) sudo snort -c /etc/snort/rules/local.rules -q -Q --daq afpacket -i eth0:eth1 -A full
 
 
+THM LIVE ATTACK2
+
+(A) First tried to sniff mode so that we could find the reverse shell ip and port used 
+
+sudo snort -v -n 10
+
+(B) Found that 10.10.144.156:4444 is used for reverse shell. Which is outbound
+
+so in /etc/snort/rules/rules.local made this rule:-
+drop tcp any any <> any 4444 (msg: "DROPPED"; sid:100001; rev:1;)
+
+got a hit.
