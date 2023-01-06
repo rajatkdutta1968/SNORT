@@ -1,5 +1,18 @@
 THM SNORT LIVE ATTACK
 1.
+write an IPS rule and run Snort in IPS mode to stop the brute-force attack. Once you stop the attack properly, you will have the flag on the desktop!
+
+Here are a few points to remember:
+
+Create the rule and test it with "-A console" mode. 
+Use "-A full" mode and the default log path to stop the attack.
+Write the correct rule and run the Snort in IPS "-A full" mode.
+Block the traffic at least for a minute and then the flag file will appear on your desktop
+
+Ans:
+(A) create a rule in /etc/snort/rules/local.rules
+
+sudo nano /etc/snort/rules/local.rules
 
 # $Id: local.rules,v 1.11 2004/07/23 20:15:44 bmc Exp $
 # ----------------
@@ -8,4 +21,7 @@ THM SNORT LIVE ATTACK
 # This file intentionally does not come with signatures.  Put your local
 # additions here.
 drop tcp any any <> any any (msg: "DROPPED"; sid:100001; rev:1;)
+
+(B) sudo snort -c /etc/snort/snort.conf -q -Q --daq afpacket -i eth0:eth1 -A full
+
 
