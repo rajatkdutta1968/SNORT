@@ -22,6 +22,6 @@ sudo nano /etc/snort/rules/local.rules
 # additions here.
 drop tcp any any <> any any (msg: "DROPPED"; sid:100001; rev:1;)
 
-(B) sudo snort -c /etc/snort/snort.conf -q -Q --daq afpacket -i eth0:eth1 -A full
+(B) sudo snort -c /etc/snort/rules/local.rules -q -Q --daq afpacket -i eth0:eth1 -A full
 
 
